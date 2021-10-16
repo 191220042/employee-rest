@@ -43,6 +43,9 @@ class DatabaseLoader {
 			repository.save(new Employee("久原", "", "0"));
 			repository.save(new Employee("久羽", "", "0"));
 			repository.save(new Employee("久鹏", "", "0"));
+			repository.save(new Employee("久伯", "", "0"));
+			repository.save(new Employee("小赖", "", "0"));
+			repository.save(new Employee("闻歌", "", "0"));
 		};
 	}
 
