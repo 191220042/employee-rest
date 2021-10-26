@@ -15,14 +15,14 @@
  */
 package org.springframework.hateoas.examples;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.hateoas.examples.projo.Player;
 
 /**
- * A simple Spring Data {@link CrudRepository} for storing {@link Employee}s.
+ * A simple Spring Data {@link CrudRepository} for storing {@link Player}s.
  *
  * @author Greg Turnquist
  */
-interface EmployeeRepository extends CrudRepository<Employee, Long> {
+interface PlayerRepository extends CrudRepository<Player, Long> {
 }
 

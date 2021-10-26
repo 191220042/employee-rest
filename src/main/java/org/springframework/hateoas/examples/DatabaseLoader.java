@@ -28,24 +28,24 @@
 //class DatabaseLoader {
 //
 //	/**
-//	 * Use Spring to inject a {@link EmployeeRepository} that can then load data.
+//	 * Use Spring to inject a {@link PlayerRepository} that can then load data.
 //	 * Since this will run only after the app is operational, the database will be
 //	 * up.
 //	 *
 //	 * @param repository
 //	 */
 //	@Bean
-//	CommandLineRunner init(EmployeeRepository repository) {
+//	CommandLineRunner init(PlayerRepository repository) {
 //
 //		return args -> {
-//			repository.save(new Employee("久余", "", "0"));
-//			repository.save(new Employee("爸点爸", "", "0"));
-//			repository.save(new Employee("久原", "", "0"));
-//			repository.save(new Employee("久羽", "", "0"));
-//			repository.save(new Employee("久鹏", "", "0"));
-//			repository.save(new Employee("久伯", "", "0"));
-//			repository.save(new Employee("小赖", "", "0"));
-//			repository.save(new Employee("闻歌", "", "0"));
+//			repository.save(new Player("久余", "", "0"));
+//			repository.save(new Player("爸点爸", "", "0"));
+//			repository.save(new Player("久原", "", "0"));
+//			repository.save(new Player("久羽", "", "0"));
+//			repository.save(new Player("久鹏", "", "0"));
+//			repository.save(new Player("久伯", "", "0"));
+//			repository.save(new Player("小赖", "", "0"));
+//			repository.save(new Player("闻歌", "", "0"));
 //		};
 //	}
 //

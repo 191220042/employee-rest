@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.hateoas.examples;
+package org.springframework.hateoas.examples.projo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AccessLevel;
@@ -44,64 +44,47 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor
 @JsonIgnoreProperties({"handler", "hibernateLazyInitializer"})
-class Employee {
+public
+class Player {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long id;
 
-	public String getFirstName() {
-		return firstName;
+	public Long getScore() {
+		return score;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setScore(Long score) {
+		this.score = score;
 	}
-
-	@Column(name = "firstname")
-	private String firstName;
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	@Column(name = "lastname")
-	private String lastName;
 
 	@Column(name = "name")
 	private String name;
 
-	@Column(name = "role")
-	private String role;
+	@Column(name = "score")
+	private Long score;
 
 	/**
 	 * Useful constructor when id is not yet known.
-	 * 
-	 * @param firstName
-	 * @param lastName
-	 * @param role
+	 *
+	 * @param name
+	 * @param score
 	 */
 
-	Employee(String firstName, String lastName, String role) {
-
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.role = role;
-		name=firstName + " " + lastName;
+	Player(String name, Long score) {
+		this.score = score;
+		this.name=name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Employee(long l, String frodo, String baggins, String ring_bearer) {
+	public Player(long l, String n,Long s) {
 	}
 
 	public String getName(){
-		return firstName + " " + lastName;
+		return name;
 	}
 }
