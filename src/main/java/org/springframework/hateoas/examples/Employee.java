@@ -15,14 +15,13 @@
  */
 package org.springframework.hateoas.examples;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Domain object representing a company employee. Project Lombok keeps actual
@@ -41,12 +40,15 @@ import javax.persistence.Id;
  */
 @Data
 @Entity
+@Table(name = "Player")
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor
+@JsonIgnoreProperties({"handler", "hibernateLazyInitializer"})
 class Employee {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
 
 	public String getFirstName() {
@@ -57,6 +59,7 @@ class Employee {
 		this.firstName = firstName;
 	}
 
+	@Column(name = "firstname")
 	private String firstName;
 
 	public String getLastName() {
@@ -67,8 +70,13 @@ class Employee {
 		this.lastName = lastName;
 	}
 
+	@Column(name = "lastname")
 	private String lastName;
+
+	@Column(name = "name")
 	private String name;
+
+	@Column(name = "role")
 	private String role;
 
 	/**
